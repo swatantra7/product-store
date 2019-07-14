@@ -10,13 +10,13 @@
 
 ProductType.find_or_create_by(name: 'Mobile')
 
-MOBILE_BRANS = ['BlackBerry', 'Apple', 'MicroSoft', 'Asus', 'Gionee', 'Google', 'Htc']
+MOBILE_BRANDS = ['BlackBerry', 'Apple', 'MicroSoft', 'Asus', 'Gionee', 'Google', 'Htc']
 
 5000.times do
   Product.create(
     name: Faker::Name.unique.name,
     model: Faker::Name.unique.name,
-    brand: MOBILE_BRANS.sample,
+    brand: MOBILE_BRANDS.sample,
     year: Date.today,
     ram: Faker::Number.number(1),
     external_storage: Faker::Number.number(3),
