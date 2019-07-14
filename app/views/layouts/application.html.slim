@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title
+      | Product Store
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render partial: 'layouts/modal'
+    header.header
+      .top-bar
+        .container-fluid
+          - if user_signed_in?
+            .row
+              .col-md-6 style= "padding-top: 20px;"
+                label
+                  = "Welcome #{current_user.email}"
+              .col-md-6
+                .pull-right
+                  ul.nav.navbar-nav
+                    li.dropdown.header-profile#header-profile-picture
+                      a.dropdown-toggle data-toggle="dropdown" href="#"
+                        = render 'layouts/header_profile_picture'
+                      ul.dropdown-menu
+                        li.dropdown-item
+                          = link_to 'LOGOUT', destroy_user_session_path, method: :delete,
+                            data: { confirm: 'Are you sure you want to logout?' }
+            .row
+              = render 'layouts/navigation'
+          - else
+            .col-md-2.header-logo
+              .col-md-4
+                = image_tag "logo.png", width:'80', height: '80', alt: 'logo'
+            .pull-right
+              ul.nav.navbar-nav
+                li
+                  = link_to 'LOGIN', new_user_session_path, class: 'login'
+    .page-content
+      .container
+        - if notice
+          p.alert.alert-success
+            = notice
+        - if alert
+          p.alert.alert-danger
+            = alert
+        = yield
+
+javascript:
+  $('ul.nav li.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });

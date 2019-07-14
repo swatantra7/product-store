@@ -1,0 +1,43 @@
+.row
+  .col-md-12
+    .table-wrapper
+      .space-20
+      .table-responsive
+        table.table.table-bordered.table-striped#bootstrap-table
+          thead
+            tr
+              th data-sortable="true" Reference ID
+              th data-sortable="true" Name
+              th data-sortable="true" Model 
+              th data-sortable="true" Brand
+              th data-sortable="true" Year
+              th data-sortable="true" Ram
+              th data-sortable="true" External Storage
+              th data-sortable="true" Created By
+              th data-sortable="true" Created At
+              th data-sortable="true" Updated At
+              th data-sortable="true" Action
+          - @products.each do |product|
+            tr
+              td
+                = product.id
+              td 
+                = product.name
+              td 
+                = product.model
+              td 
+                = product.brand
+              td 
+                = product.year
+              td 
+                = product.ram
+              td 
+                = product.external_storage
+              td 
+                = product.created_at.in_time_zone.strftime("%d/%m/%Y")
+              td 
+                = product.updated_at.in_time_zone.strftime("%d/%m/%Y")
+
+
+
+
