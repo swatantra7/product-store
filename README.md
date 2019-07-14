@@ -19,7 +19,7 @@ Product Store is a platform where you can manage your Product, Product Informati
 # App Setup
 
 Execute following rake:
-* rake ps:setup RAILS_ENV=production
+* rake ps:install RAILS_ENV=production
 
 This rake will execute all required DB migrations for App setup with seed data.
 ### Seed Data - Following Records will get created with above rake
