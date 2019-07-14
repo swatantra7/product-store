@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+ProductType.find_or_create_by(name: 'Mobile')
+
+MOBILE_BRANS = ['BlackBerry', 'Apple', 'MicroSoft', 'Asus', 'Gionee', 'Google', 'Htc']
+
+5000.times do
+  Product.create(
+    name: Faker::Name.unique.name,
+    model: Faker::Name.unique.name,
+    brand: MOBILE_BRANS.sample,
+    year: Date.today,
+    ram: Faker::Number.number(1),
+    external_storage: Faker::Number.number(3),
+    product_type_id: ProductType.find_by_name('Mobile').id,
+    user_id: User.first.id
+  )
+end
