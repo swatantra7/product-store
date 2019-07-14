@@ -21,8 +21,8 @@
 
 
 $( document ).ready(function() {
-  
+
   $('#bootstrap-table, .bootstrap-table').bootstrapTable({
   });
 
-}
+});
