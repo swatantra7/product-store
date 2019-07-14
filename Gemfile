@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '4.6.0'
 
+# Active Record
+
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'jquery-rails'
@@ -32,6 +36,13 @@ gem 'jquery-rails'
 gem 'slim-rails'
 
 gem 'simple-navigation-bootstrap'
+
+gem 'pagy'
+
+gem 'rubyzip', '~> 1.1.0'
+gem 'axlsx', '2.1.0.pre'
+gem 'axlsx_rails'
+gem 'font-awesome-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

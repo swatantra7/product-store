@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Products") do |sheet|
+  title = wb.styles.add_style(b: true, bg_color: "395870", fg_color: "FFFFFF",
+  alignment: {horizontal: :center})
+  sheet.add_row ["Product ID", "Product Name", "Model", "Brand", "Year", "Ram", "External Storage"], style: title
+  @products.each.with_index(1) do |product, index|
+    product_link = "http://#{URI.parse(request.original_url).host}/products/#{product.id}"
+    sheet.add_row [product_link, product.name, product.model, product.brand, product.year, product.ram, product.external_storage]
+    sheet.add_hyperlink :location => product_link, :ref => sheet.rows[index].cells.first
+  end
+end

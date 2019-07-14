@@ -26,3 +26,8 @@ $( document ).ready(function() {
   });
 
 });
+
+$(document).on('turbolinks:load', function() {
+  $('#bootstrap-table, .bootstrap-table').bootstrapTable({
+  });
+});

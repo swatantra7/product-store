@@ -16,3 +16,6 @@
  *= require bootstrap.min
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";

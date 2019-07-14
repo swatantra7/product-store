@@ -1,0 +1,50 @@
+.row
+  .col-md-9.col-md-offset-1
+    h4 VIEWING DETAILS FOR #{@product.id}
+    .space-10
+    .row
+      label.col-md-4.control-label Product ID:
+      label.col-md-4.control-label
+        = @product.id
+    .space-10
+    .row
+      label.col-md-4.control-label Product Name
+      label.col-md-4.control-label
+        = @product.name
+    .space-10
+    .row
+      label.col-md-4.control-label Model
+      label.col-md-4.control-label
+        = @product.model
+    .space-10
+    .row
+      label.col-md-4.control-label Brand
+      label.col-md-4.control-label
+        = @product.brand
+    .space-10
+    .row
+      label.col-md-4.control-label Year
+      label.col-md-4.control-label
+        = @product.year.try(:year)
+    .space-10
+    .row
+      label.col-md-4.control-label Ram
+      label.col-md-4.control-label
+        = @product.ram
+    .space-10
+    .row
+      label.col-md-4.control-label External Storage
+      label.col-md-4.control-label
+        = @product.external_storage
+    .space-10
+    .row
+      label.col-md-4.control-label Created On
+      label.col-md-4.control-label
+        = @product.created_at.strftime("%d/%m/%Y")
+    .space-10
+    .row.space-20
+      .col-md-12.col-md-offset-2
+        = link_to 'Go Back', products_path, class: 'btn btn-danger btn-sm'
+    .clearfix
+    .space-20
+    .space-20

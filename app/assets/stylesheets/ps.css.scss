@@ -36,6 +36,12 @@ $white: #ffffff;
   }
 }
 
+label {
+  color: $light-green;
+  text-align: left;
+  font-weight: 200 !important;
+}
+
 .login{
   position: fixed;
   margin-top: 36px;
@@ -58,3 +64,22 @@ thead tr th{
 #navbar-collapse .navbar-nav li a{
   color: whitesmoke;
 }
+
+.pagy-nav{
+  display:table; margin:auto;
+}
+.pagy-nav a{
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: whitesmoke;
+  text-decoration: none;
+  background-color: #3361ff;
+}
+.space-20{
+  padding-top: 20px
+}
+.space-10{
+  padding-top: 10px
+}
+

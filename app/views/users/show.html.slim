@@ -1,0 +1,28 @@
+.row
+  .col-md-9.col-md-offset-1
+    h4 VIEWING DETAILS FOR #{@user.name.upcase}
+    .space-10
+    .row
+      label.col-md-4.control-label User ID:
+      label.col-md-4.control-label
+        = @user.id
+    .space-10
+    .row
+      label.col-md-4.control-label User Name
+      label.col-md-4.control-label
+        = @user.name
+    .space-10
+    .row
+      label.col-md-4.control-label Email
+      label.col-md-4.control-label
+        = @user.email
+    .space-10
+    .row
+      label.col-md-4.control-label Created at
+      label.col-md-4.control-label
+        = @user.created_at.strftime('%m/%d/%Y')
+    .space-10
+    .space-10
+    .row.space-20
+      .col-md-12.col-md-offset-2
+        = link_to 'Go Back', products_path, class: 'btn btn-danger btn-sm'

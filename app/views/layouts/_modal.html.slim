@@ -1,3 +1,7 @@
-.modal.fade tabindex: '-1',role: 'dialog', 'aria-labelledby' => 'modalWindow', 'aria-hidden' => 'false', id: 'modal-window' 
+.modal.fade.in#modal-window tabindex='-1',role='dialog',aria-labelledby='modalWindow',aria-hidden='false'
   .modal-dialog
     .modal-content
+      .modal-header
+        h4.text-center
+          button.close aria-label="Close", data-dismiss="modal", type="button"
+            span aria-hidden= "true" Close

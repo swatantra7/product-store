@@ -1,0 +1,20 @@
+.row style="margin-left: 2px; margin-right: 2px;"
+  = label_tag 'Filter', nil, class: 'col-md-2 control-label'
+  .col-md-12
+    = search_form_for @search, html: {class: 'form-horizontal'} do |f|
+      .form-group
+        = f.label :brand, class: 'col-md-2 control-label'
+        .col-md-4
+          = f.text_field :brand_cont, class: 'form-control'
+        = f.label :model, class: 'col-md-2 control-label'
+        .col-md-4
+          = f.text_field :model_cont, class: 'form-control'
+        = f.label :ram, class: 'col-md-2 control-label'
+        .col-md-4
+          = f.text_field :ram_eq, class: 'form-control'
+        = f.label :external_storage, class: 'col-md-2 control-label'
+        .col-md-4
+          = f.text_field :external_storage_eq, class: 'form-control'
+      = f.submit 'Submit', class: 'btn btn-success btn-sm'
+      |&nbsp;
+      = link_to 'Clear', products_path, class: 'btn btn-success btn-sm'

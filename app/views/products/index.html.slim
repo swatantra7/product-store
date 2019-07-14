@@ -1,6 +1,13 @@
 .row
   .col-md-12
     .table-wrapper
+      = render 'search'
+      .space-20
+        .pull-right
+          = link_to products_path(format: :xlsx, params: params.permit(q: [:brand_cont, :external_storage_eq, :model_cont, :ram_eq])), class: "btn btn-primary", style: "padding: 4px 8px;margin-right:10px;" do
+              = fa_icon "download"
+              Export Export Details
+      .space-20
       .space-20
       .table-responsive
         table.table.table-bordered.table-striped#bootstrap-table
@@ -33,11 +40,19 @@
                 = product.ram
               td 
                 = product.external_storage
+              td
+                = product.user_name
               td 
                 = product.created_at.in_time_zone.strftime("%d/%m/%Y")
               td 
                 = product.updated_at.in_time_zone.strftime("%d/%m/%Y")
+              td
+               = link_to product_path(product), remote: true,
+                class: "btn btn-primary",
+                style: "padding: 0px; width: 50px;" do
+                  = fa_icon 'eye'
 
+== pagy_nav(@pagy)
 
 
 

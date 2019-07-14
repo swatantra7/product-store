@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:index, :show]
+  resources :users, only: :show
 
   devise_scope :user do
     root to: "devise/sessions#new"
