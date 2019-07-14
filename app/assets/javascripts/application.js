@@ -20,13 +20,6 @@
 //= require_tree .
 
 
-$( document ).ready(function() {
-
-  $('#bootstrap-table, .bootstrap-table').bootstrapTable({
-  });
-
-});
-
 $(document).on('turbolinks:load', function() {
   $('#bootstrap-table, .bootstrap-table').bootstrapTable({
   });
